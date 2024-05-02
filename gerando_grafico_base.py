@@ -6,7 +6,10 @@ df = pd.read_excel("/home/victor/Documents/TREZENTOS/trezentosteste999.xlsx")
 resol = 1
 linha_grade = 1.1
 media_turma = media_y_data = df.iloc[:, 1].mean()
-dias = 30
+dias_totais = 30
+dia_atual = 15
+porcent_graf_dias = (dia_atual / dias_totais) * 30
+
 # Extrair os dados para os eixos x e y
 x_data = df.iloc[:, 0].tolist()  # Primeira coluna
 y_data = df.iloc[:, 1].tolist()  # Segunda coluna
@@ -75,7 +78,7 @@ imagens = [
     ("https://lh3.googleusercontent.com/u/0/drive-viewer/AKGpihb1MnjKMi7wq4CuWidnVKHK4PI_wWq-7m1OvBIOBg1yJ32Dx6kRarXP_wG13PHQzazknuZgF35oDXa7t24UxYwmy5CI19hL9g=w1920-h968", -0.115*linha_grade, 0.62),
     ("https://lh3.googleusercontent.com/u/0/drive-viewer/AKGpihYM70mWQfdpEeFLvs-WqnbFIhbLdIjJ-myDwSQ26ewpP9NNakzGpRGAyzOV0TeNTZeVoYKQspRjlgtWF6t85wBtybMKnnxzfb0=w1920-h968", -0.1115*linha_grade, 0.75),
     ("https://lh3.googleusercontent.com/u/0/drive-viewer/AKGpihYhsGzTGZbVoBMshdjmCOKVJvTykFhYb-zQ8lVappNN2vhae4896hkCrfehvCqwnQkoFQCwfoAWWF4QSEhnaNDc2DUCVdnZXA=w1920-h968", -0.105*linha_grade, 0.9),
-    ("https://lh3.googleusercontent.com/u/0/drive-viewer/AKGpihZBq1w-NiUbVSw8fzE3UBCiAbDK6uvI2CTXojLYkFM2cwAXBenfhAa7mDjJ6Ceqn5mdwNLqHCEZyWBXBTBvvtZMamL1zVEIIro=w1920-h968", -0.2, 1.2)
+    ("https://lh3.googleusercontent.com/u/0/drive-viewer/AKGpihZBq1w-NiUbVSw8fzE3UBCiAbDK6uvI2CTXojLYkFM2cwAXBenfhAa7mDjJ6Ceqn5mdwNLqHCEZyWBXBTBvvtZMamL1zVEIIro=w1920-h968", -0.25, 1.22)
 ]
 
 for imagem_url, x, y in imagens:

@@ -2,9 +2,9 @@ import plotly.graph_objects as go
 import os
 import gerando_grafico_base as gf
 fig1 = go.Figure(go.Bar(
-    x=[gf.porcent_graf_dias],
+    x=[30],
     y=['Dias restantes'],
-    marker=dict(color="#a5a5a5",cornerradius=30),
+    marker=dict(color="#eaeaea",cornerradius=30),
     width=0.2,
     orientation="h",
 ))
@@ -22,5 +22,5 @@ fig1.update_layout(
 
 if not os.path.exists("images"):
     os.mkdir("images")
-fig1.write_image("/home/victor/Documents/TREZENTOS/images/dias_graf.png")
+fig1.write_image("/home/victor/Documents/TREZENTOS/images/backside_dias_graf.png")
 #fig1.show()
