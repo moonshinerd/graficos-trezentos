@@ -6,7 +6,7 @@ df = pd.read_excel("/home/victor/Documents/TREZENTOS/trezentosteste999.xlsx")
 resol = 1
 linha_grade = 1.1
 media_turma = media_y_data = df.iloc[:, 1].mean()
-
+dias = 30
 # Extrair os dados para os eixos x e y
 x_data = df.iloc[:, 0].tolist()  # Primeira coluna
 y_data = df.iloc[:, 1].tolist()  # Segunda coluna

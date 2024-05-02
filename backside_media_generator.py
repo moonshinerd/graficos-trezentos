@@ -23,5 +23,5 @@ fig1.update_layout(
 
 if not os.path.exists("images"):
     os.mkdir("images")
-fig1.write_image("/home/victor/Documents/TREZENTOS/images/backside_graf.png")
+fig1.write_image("/home/victor/Documents/TREZENTOS/images/backside_media_graf.png")
 #fig1.show()
