@@ -3,7 +3,6 @@ import gerando_grafico_base, gerando_grafico_media_turma,backside_media_generato
 import resize_image as ri
 import os
 
-import os
 
 # Obtém o diretório atual do script
 current_directory = os.path.dirname(os.path.abspath(__file__))
@@ -38,6 +37,9 @@ font1 = ImageFont.truetype(font_path, font_size)
 font_size = 40
 font2 = ImageFont.truetype(font_path, font_size)
 
+font_size = 30
+font3 = ImageFont.truetype(font_path, font_size)
+
 text1 = "Média da"
 pos1 = (70, 1350)
 
@@ -45,16 +47,19 @@ text2 = "Turma"
 pos2 = (85, 1375)
 
 text3 = "Cálculo 1 com Professor Ricardo Ramos Fragelli"
-pos3 = (300+400, 75)
+pos3 = (300+350, 75)
 
 text4 = "1 semestre de 2024 - Segunda prova"
-pos4 = (350+450, 125)
+pos4 = (350+400, 125)
 
 text5 = "Dia  " + str(gerando_grafico_base.dia_atual)
 pos5 = (120, 220)
 
 text6 = "Entrega"
 pos6 = (2040, 220)
+
+text7 = "Grupo"
+pos7 = (1086, 1375)
 
 text_color = "#000000" #preto
 # Adiciona o texto à imagem
@@ -64,6 +69,7 @@ draw.text( pos3 , text3, fill=text_color, font=font2)
 draw.text( pos4 , text4, fill=text_color, font=font2)
 draw.text( pos5 , text5, fill=text_color, font=font1)
 draw.text( pos6 , text6, fill=text_color, font=font1)
+draw.text( pos7 , text7, fill=text_color, font=font3)
 
 # Corta a imagem para a caixa delimitadora
 media = media.crop(media.getbbox())

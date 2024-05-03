@@ -14,6 +14,12 @@ porcent_graf_dias = (dia_atual / dias_totais) * 30
 x_data = df.iloc[:, 0].tolist()  # Primeira coluna
 y_data = df.iloc[:, 1].tolist()  # Segunda coluna
 
+#caso o valor do grupo seja igual a zero
+# Verifique quais elementos são iguais a 0
+for i in range(len(y_data)):
+    if y_data[i] == 0:
+        y_data[i] += 0.5
+
 # Definir a largura e a altura da figura
 largura = 2173*resol  # Defina o valor desejado
 altura = 1524*resol  # Defina o valor desejado
@@ -47,7 +53,7 @@ fig = go.Figure(data=go.Bar(x=x_data, y=y_data, marker=dict(color=cores, cornerr
 fig.update_layout(
     plot_bgcolor='white',
 
-    xaxis_title="Grupo",
+    xaxis_title="",
     yaxis_title="",
     title="",
     yaxis=dict(range=[0, 14.5],
@@ -69,16 +75,34 @@ fig.update_layout(
 )
 
 # Adicionar as imagens
+
+
+# Obtém o diretório atual do script
+current_directory = os.path.dirname(os.path.abspath(__file__))
+
+# Constrói os caminhos relativos à pasta "bob_esponja"
+path_imagem_0hour = os.path.join(current_directory, 'Bob_esponja_assets', '0hours.png')
+path_imagem_2hour = os.path.join(current_directory, 'Bob_esponja_assets', '2hours.png')
+path_imagem_4hour = os.path.join(current_directory, 'Bob_esponja_assets', '4hours.png')
+path_imagem_6hour = os.path.join(current_directory, 'Bob_esponja_assets', '6hours.png')
+path_imagem_8hour = os.path.join(current_directory, 'Bob_esponja_assets', '8hours.png')
+path_imagem_10hour = os.path.join(current_directory, 'Bob_esponja_assets', '10hours.png')
+path_imagem_12hour = os.path.join(current_directory, 'Bob_esponja_assets', '12hours.png')
+path_imagem_14hour = os.path.join(current_directory, 'Bob_esponja_assets', '14hours.png')
+path_imagem_logounb = os.path.join(current_directory, 'demais_assets', 'logo_unb.png')
+path_imagem_logotrezentos = os.path.join(current_directory, 'demais_assets', 'trezentos.png')
+
 imagens = [
-    ("https://lh3.googleusercontent.com/u/0/drive-viewer/AKGpihZLfn-QAL8Q1_SHqkxDAerl4NSpaMrSCtUsh2-UHaOXT8cmW6YlpOC16wAgJuXPY8plRJYr7NKzQTPmv5kioWXHfbMVJawcNDc=w1175-h893", -0.12*linha_grade, -0.05),
-    ("https://lh3.googleusercontent.com/u/0/drive-viewer/AKGpihZMmgOvZYv7I-rmA68cLumTUqWM57Y0Qhf9kAlg8q2FfbByIJIWAWm_sB2AbuQuo6djW6Kvt9H51iyh8VJlHCoF8Ek0QMvGm9c=w1920-h968", -0.11*linha_grade, 0.08),
-    ("https://lh3.googleusercontent.com/u/0/drive-viewer/AKGpihYpG9zfwXVWB7Sa-E3wmQqF_XPRfsJDZjQ9Kqn4_YUPHEmklYh_jdFzxEmgS9dBd04eqRHirqXaUVbbLSVpJ6Osm8ZCUtl5FuA=w1920-h298", -0.11*linha_grade, 0.21),
-    ("https://lh3.googleusercontent.com/u/0/drive-viewer/AKGpihakNsQT-BHw26LHyERPjQW6bYUuJ2dA5p8eAzqW1G1-icnAYEi_9uOdTccUPRC010z2yGlz0ki9WNzoq2GEdmDtO0yB3PXQab8=w1920-h927", -0.115*linha_grade, 0.35),
-    ("https://lh3.googleusercontent.com/u/0/drive-viewer/AKGpihbkqmnR5NJ8nPmUl0ikwkCtxcmIrmg8-Bws4ENXc2qYxJ_HG4Qee_F6v9oJQBkXf8Pra_QGE43bJlBQ_8_qH-Da5_3hX4vxxKk=w1920-h968", -0.1115*linha_grade, 0.48),
-    ("https://lh3.googleusercontent.com/u/0/drive-viewer/AKGpihb1MnjKMi7wq4CuWidnVKHK4PI_wWq-7m1OvBIOBg1yJ32Dx6kRarXP_wG13PHQzazknuZgF35oDXa7t24UxYwmy5CI19hL9g=w1920-h968", -0.115*linha_grade, 0.62),
-    ("https://lh3.googleusercontent.com/u/0/drive-viewer/AKGpihYM70mWQfdpEeFLvs-WqnbFIhbLdIjJ-myDwSQ26ewpP9NNakzGpRGAyzOV0TeNTZeVoYKQspRjlgtWF6t85wBtybMKnnxzfb0=w1920-h968", -0.1115*linha_grade, 0.75),
-    ("https://lh3.googleusercontent.com/u/0/drive-viewer/AKGpihYhsGzTGZbVoBMshdjmCOKVJvTykFhYb-zQ8lVappNN2vhae4896hkCrfehvCqwnQkoFQCwfoAWWF4QSEhnaNDc2DUCVdnZXA=w1920-h968", -0.105*linha_grade, 0.9),
-    ("https://lh3.googleusercontent.com/u/0/drive-viewer/AKGpihZBq1w-NiUbVSw8fzE3UBCiAbDK6uvI2CTXojLYkFM2cwAXBenfhAa7mDjJ6Ceqn5mdwNLqHCEZyWBXBTBvvtZMamL1zVEIIro=w1920-h968", -0.25, 1.22)
+    (path_imagem_0hour, -0.12*linha_grade, -0.05),
+    (path_imagem_2hour, -0.11*linha_grade, 0.08),
+    (path_imagem_4hour, -0.11*linha_grade, 0.21),
+    (path_imagem_6hour, -0.115*linha_grade, 0.35),
+    (path_imagem_8hour, -0.1115*linha_grade, 0.48),
+    (path_imagem_10hour, -0.115*linha_grade, 0.62),
+    (path_imagem_12hour, -0.1115*linha_grade, 0.75),
+    (path_imagem_14hour, -0.105*linha_grade, 0.9),
+    (path_imagem_logotrezentos, -0.25, 1.225),
+    (path_imagem_logounb, 0.999, 1.22)
 ]
 
 for imagem_url, x, y in imagens:
