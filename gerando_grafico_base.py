@@ -45,7 +45,7 @@ for y in y_data:
       cores.append('#56d19f')
     else:
       cores.append('#62b3ef')  # Cor padrão para outros valores
-
+fonte_ttf_externa = "/home/victor/Documents/TREZENTOS/Poppins-Regular.ttf"
 # Criar o gráfico de barras
 fig = go.Figure(data=go.Bar(x=x_data, y=y_data, marker=dict(color=cores, cornerradius=30),width=0.65))
 
@@ -71,7 +71,8 @@ fig.update_layout(
     margin=dict(l=410*resol,r=185*resol, b=92*2*resol,t=392*resol), #l=410/2,r=185/2, b=92,t=392/2)
     width=largura,  # Definir a largura da figura
     height=altura,  # Definir a altura da figura
-    font=dict(family="Poppins"),
+    font=dict(family=fonte_ttf_externa,
+              color= "#000000"),
 )
 
 # Adicionar as imagens

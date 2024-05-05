@@ -80,12 +80,39 @@ media = Image.open(path_redimensionada)
 
 coordx = -75
 coordy = gerando_grafico_base.resol*342
-
+print(gerando_grafico_base.media_turma)
+#if gerando_grafico_base.media_turma 
 # Criando a barra da média da turma
-base.paste(backside_media, (coordx, 290),backside_media)  # ajuste a posição conforme necessário
-base.paste(backside_media_invertido, (100, 1524-backside_media_invertido.height-180),backside_media_invertido)  # ajuste a posição conforme necessário
-base.paste(media, (coordx, coordy),media)  # ajuste a posição conforme necessário
-base.paste(media_invertida, (100, 1524-media_invertida.height-180),media_invertida)  # ajuste a posição conforme necessário
+if 11 < gerando_grafico_base.media_turma <= 13:
+    base.paste(backside_media, (coordx, 290),backside_media)  # ajuste a posição conforme necessário
+    base.paste(backside_media_invertido, (100, 1524-backside_media_invertido.height-180),backside_media_invertido)  # ajuste a posição conforme necessário
+    base.paste(media, (coordx+50, coordy-52+10),media)  # ajuste a posição conforme necessário
+    base.paste(media_invertida, (100, 1524-media_invertida.height-180),media_invertida)  # ajuste a posição conforme necessário
+elif 10 < gerando_grafico_base.media_turma <= 11:
+    base.paste(backside_media, (coordx, 290),backside_media)  # ajuste a posição conforme necessário
+    base.paste(backside_media_invertido, (100, 1524-backside_media_invertido.height-180),backside_media_invertido)  # ajuste a posição conforme necessário
+    base.paste(media, (coordx+50, coordy-52+20),media)  # ajuste a posição conforme necessário
+    base.paste(media_invertida, (100, 1524-media_invertida.height-180),media_invertida)  # ajuste a posição conforme necessário
+elif 8< gerando_grafico_base.media_turma <= 10:
+    base.paste(backside_media, (coordx, 290),backside_media)  # ajuste a posição conforme necessário
+    base.paste(backside_media_invertido, (100, 1524-backside_media_invertido.height-180),backside_media_invertido)  # ajuste a posição conforme necessário
+    base.paste(media, (coordx+50, coordy-52+30),media)  # ajuste a posição conforme necessário
+    base.paste(media_invertida, (100, 1524-media_invertida.height-180),media_invertida)  # ajuste a posição conforme necessário
+elif 6 < gerando_grafico_base.media_turma <= 8:
+    base.paste(backside_media, (coordx, 290),backside_media)  # ajuste a posição conforme necessário
+    base.paste(backside_media_invertido, (100, 1524-backside_media_invertido.height-180),backside_media_invertido)  # ajuste a posição conforme necessário
+    base.paste(media, (coordx, coordy-15),media)  # ajuste a posição conforme necessário
+    base.paste(media_invertida, (100, 1524-media_invertida.height-180),media_invertida)  # ajuste a posição conforme necessário
+elif gerando_grafico_base.media_turma <= 6:
+    base.paste(backside_media, (coordx, 290),backside_media)  # ajuste a posição conforme necessário
+    base.paste(backside_media_invertido, (100, 1524-backside_media_invertido.height-180),backside_media_invertido)  # ajuste a posição conforme necessário
+    base.paste(media, (coordx, coordy),media)  # ajuste a posição conforme necessário
+    base.paste(media_invertida, (100, 1524-media_invertida.height-180),media_invertida)  # ajuste a posição conforme necessário
+else:
+    base.paste(backside_media, (coordx, 290),backside_media)  # ajuste a posição conforme necessário
+    base.paste(backside_media_invertido, (100, 1524-backside_media_invertido.height-180),backside_media_invertido)  # ajuste a posição conforme necessário
+    base.paste(media, (coordx+50, coordy-52),media)  # ajuste a posição conforme necessário
+    base.paste(media_invertida, (100, 1524-media_invertida.height-180),media_invertida)  # ajuste a posição conforme necessário
 
 #Criando a barra dos dias
 coordx= 200

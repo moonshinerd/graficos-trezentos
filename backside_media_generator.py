@@ -5,7 +5,7 @@ import os
 
 fig1 = go.Figure(go.Bar(
     x=['Média da Turma'],
-    y=[14],
+    y=[14.5],
     marker=dict(color="#eaeaea",cornerradius=30),
     width=0.2,
 ))
