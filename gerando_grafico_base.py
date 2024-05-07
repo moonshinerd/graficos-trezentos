@@ -1,6 +1,7 @@
 import pandas as pd
 import plotly.graph_objects as go
 import os
+from PIL import Image
 # Carregar o DataFrame
 df = pd.read_excel("/home/victor/Documents/TREZENTOS/trezentosteste999.xlsx")
 resol = 1
@@ -50,6 +51,7 @@ fonte_ttf_externa = "/home/victor/Documents/TREZENTOS/Poppins-Regular.ttf"
 fig = go.Figure(data=go.Bar(x=x_data, y=y_data, marker=dict(color=cores, cornerradius=30),width=0.65))
 
 # Adicionar rótulos aos eixos
+a=50
 fig.update_layout(
     plot_bgcolor='white',
 
@@ -68,7 +70,7 @@ fig.update_layout(
         tickfont=dict(size=14*resol*2),  # Aumenta o tamanho da fonte dos números no eixo x
         titlefont=dict(size=20*resol*2)
         ),
-    margin=dict(l=410*resol,r=185*resol, b=92*2*resol,t=392*resol), #l=410/2,r=185/2, b=92,t=392/2)
+    margin=dict(l=410*resol,r=185*resol, b=92*2*resol-a,t=392*resol+a), #l=410/2,r=185/2, b=92,t=392/2)
     width=largura,  # Definir a largura da figura
     height=altura,  # Definir a altura da figura
     font=dict(family=fonte_ttf_externa,
@@ -93,6 +95,7 @@ path_imagem_14hour = os.path.join(current_directory, 'Bob_esponja_assets', '14ho
 path_imagem_logounb = os.path.join(current_directory, 'demais_assets', 'logo_unb.png')
 path_imagem_logotrezentos = os.path.join(current_directory, 'demais_assets', 'trezentos.png')
 
+a=0.045
 imagens = [
     (path_imagem_0hour, -0.12*linha_grade, -0.05),
     (path_imagem_2hour, -0.11*linha_grade, 0.08),
@@ -102,8 +105,8 @@ imagens = [
     (path_imagem_10hour, -0.115*linha_grade, 0.62),
     (path_imagem_12hour, -0.1115*linha_grade, 0.75),
     (path_imagem_14hour, -0.105*linha_grade, 0.9),
-    (path_imagem_logotrezentos, -0.25, 1.225),
-    (path_imagem_logounb, 0.999, 1.22)
+    (path_imagem_logotrezentos, -0.25, 1.225+a),
+    (path_imagem_logounb, 0.999, 1.22+a)
 ]
 
 for imagem_url, x, y in imagens:
@@ -125,6 +128,7 @@ for imagem_url, x, y in imagens:
 if not os.path.exists("images"):
     os.mkdir("images")
 fig.write_image("/home/victor/Documents/TREZENTOS/images/base_graf.png")
-
-# Exibir o gráfico
-#fig.show()
+'''
+base = Image.open("/home/victor/Documents/TREZENTOS/images/base_graf.png")
+base.show()
+'''
