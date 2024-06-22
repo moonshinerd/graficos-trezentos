@@ -14,7 +14,7 @@ path_redimensionada = os.path.join(current_directory, 'images', 'media_graf_redi
 path_backside_media = os.path.join(current_directory, 'images', 'backside_media_graf.png')
 path_backside_dias = os.path.join(current_directory, 'images', 'backside_dias_graf.png')
 path_dias = os.path.join(current_directory, 'images', 'dias_graf.png')
-
+path_linha_tracejada = os.path.join(current_directory, 'demais_assets', 'linha_tracejada.png')
 
 
 # Abrindo imagens
@@ -26,11 +26,14 @@ backside_dias = Image.open(path_backside_dias)
 backside_dias_invertido = ImageOps.mirror(backside_dias.crop(backside_dias.getbbox()))
 dias = Image.open(path_dias)
 dias_invertido = ImageOps.mirror(dias.crop(dias.getbbox()))
+linha_tracejada = Image.open(path_linha_tracejada)
 
 draw = ImageDraw.Draw(base)
 
 # Define a fonte e o tamanho do texto
 font_path = os.path.join(current_directory, "Poppins-Regular.ttf")
+font_path_skema = os.path.join(current_directory, "SkemaProDisplay-Medium.ttf")
+
 font_size = 24
 font1 = ImageFont.truetype(font_path, font_size)
 
@@ -39,6 +42,10 @@ font2 = ImageFont.truetype(font_path, font_size)
 
 font_size = 30
 font3 = ImageFont.truetype(font_path, font_size)
+
+font_size = 23
+font4 = ImageFont.truetype(font_path_skema, font_size)
+
 a = 48
 text1 = "Média da"
 pos1 = (70, 1350+a)
@@ -61,6 +68,9 @@ pos6 = (2040, 220)
 text7 = "Grupo"
 pos7 = (1086, 1375+a)
 
+text8 = "28h"
+pos8 = (364, 350)
+
 text_color = "#000000" #preto
 # Adiciona o texto à imagem
 draw.text( pos1 , text1, fill=text_color, font=font1)
@@ -70,6 +80,7 @@ draw.text( pos4 , text4, fill=text_color, font=font2)
 draw.text( pos5 , text5, fill=text_color, font=font1)
 draw.text( pos6 , text6, fill=text_color, font=font1)
 draw.text( pos7 , text7, fill=text_color, font=font3)
+draw.text( pos8 , text8, fill=text_color, font=font4)
 
 # Corta a imagem para a caixa delimitadora
 media = media.crop(media.getbbox())
@@ -103,6 +114,7 @@ base.paste(backside_dias, (coordx, 80-altura),backside_dias)  # ajuste a posiç�
 base.paste(backside_dias_invertido, (223, 267-altura),backside_dias_invertido) 
 base.paste(dias, (coordx, 80-altura),dias)  # ajuste a posição conforme necessário
 base.paste(dias_invertido, (223, 267-altura),dias_invertido) 
+base.paste(linha_tracejada, (410,359), linha_tracejada)
 # Salva a imagem resultante
 base.save(os.path.join(current_directory, 'images', 'imagem_final.png'))
-base.show()
+#base.show()
