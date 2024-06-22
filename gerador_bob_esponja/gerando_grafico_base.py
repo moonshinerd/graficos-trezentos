@@ -134,6 +134,4 @@ for imagem_url, x, y in imagens:
     )
 
 # Salvar a imagem
-if not os.path.exists("images"):
-    os.mkdir("images")
 fig.write_image(os.path.join(current_dir, 'images', 'base_graf.png'))

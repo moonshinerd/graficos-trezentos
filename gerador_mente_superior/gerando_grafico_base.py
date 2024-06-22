@@ -89,14 +89,14 @@ fig.update_layout(
 current_directory = os.path.dirname(os.path.abspath(__file__))
 
 # Constrói os caminhos relativos à pasta "bob_esponja"
-path_imagem_0hour = os.path.join(current_directory, 'Bob_esponja_assets', '0hours.png')
-path_imagem_2hour = os.path.join(current_directory, 'Bob_esponja_assets', '2hours.png')
-path_imagem_4hour = os.path.join(current_directory, 'Bob_esponja_assets', '4hours.png')
-path_imagem_6hour = os.path.join(current_directory, 'Bob_esponja_assets', '6hours.png')
-path_imagem_8hour = os.path.join(current_directory, 'Bob_esponja_assets', '8hours.png')
-path_imagem_10hour = os.path.join(current_directory, 'Bob_esponja_assets', '10hours.png')
-path_imagem_12hour = os.path.join(current_directory, 'Bob_esponja_assets', '12hours.png')
-path_imagem_14hour = os.path.join(current_directory, 'Bob_esponja_assets', '14hours.png')
+path_imagem_0hour = os.path.join(current_directory, 'Mente_superior_assets', '0hours.png')
+path_imagem_2hour = os.path.join(current_directory, 'Mente_superior_assets', '2hours.png')
+path_imagem_4hour = os.path.join(current_directory, 'Mente_superior_assets', '4hours.png')
+path_imagem_6hour = os.path.join(current_directory, 'Mente_superior_assets', '6hours.png')
+path_imagem_8hour = os.path.join(current_directory, 'Mente_superior_assets', '8hours.png')
+path_imagem_10hour = os.path.join(current_directory, 'Mente_superior_assets', '10hours.png')
+path_imagem_12hour = os.path.join(current_directory, 'Mente_superior_assets', '12hours.png')
+path_imagem_14hour = os.path.join(current_directory, 'Mente_superior_assets', '14hours.png')
 
 path_medalha = os.path.join(current_directory, 'demais_assets', 'medalha.png')
 path_imagem_logounb = os.path.join(current_directory, 'demais_assets', 'logo_unb.png')
@@ -134,6 +134,5 @@ for imagem_url, x, y in imagens:
     )
 
 # Salvar a imagem
-if not os.path.exists("images"):
-    os.mkdir("images")
+
 fig.write_image(os.path.join(current_dir, 'images', 'base_graf.png'))

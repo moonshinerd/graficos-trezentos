@@ -21,7 +21,5 @@ fig1.update_layout(
     height=400,
 )
 
-if not os.path.exists("images"):
-    os.mkdir("images")
 fig1.write_image(os.path.join(current_dir, 'images', 'backside_dias_graf.png'))
 #fig1.show()
