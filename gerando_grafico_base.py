@@ -97,8 +97,11 @@ path_imagem_8hour = os.path.join(current_directory, 'Bob_esponja_assets', '8hour
 path_imagem_10hour = os.path.join(current_directory, 'Bob_esponja_assets', '10hours.png')
 path_imagem_12hour = os.path.join(current_directory, 'Bob_esponja_assets', '12hours.png')
 path_imagem_14hour = os.path.join(current_directory, 'Bob_esponja_assets', '14hours.png')
+
+path_medalha = os.path.join(current_directory, 'demais_assets', 'medalha.png')
 path_imagem_logounb = os.path.join(current_directory, 'demais_assets', 'logo_unb.png')
 path_imagem_logotrezentos = os.path.join(current_directory, 'demais_assets', 'trezentos.png')
+
 
 a=0.045
 imagens = [
@@ -110,8 +113,9 @@ imagens = [
     (path_imagem_10hour, -0.115*linha_grade, 0.62),
     (path_imagem_12hour, -0.1115*linha_grade, 0.75),
     (path_imagem_14hour, -0.105*linha_grade, 0.9),
+    (path_medalha, -0.085*linha_grade, 1.025),
     (path_imagem_logotrezentos, -0.25, 1.225+a),
-    (path_imagem_logounb, 0.999, 1.22+a)
+    (path_imagem_logounb, 0.999, 1.22+a),
 ]
 
 for imagem_url, x, y in imagens:
