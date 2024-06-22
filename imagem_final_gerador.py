@@ -30,7 +30,7 @@ dias_invertido = ImageOps.mirror(dias.crop(dias.getbbox()))
 draw = ImageDraw.Draw(base)
 
 # Define a fonte e o tamanho do texto
-font_path = "/home/victor/Documents/TREZENTOS/Poppins-Regular.ttf"
+font_path = os.path.join(current_directory, "Poppins-Regular.ttf")
 font_size = 24
 font1 = ImageFont.truetype(font_path, font_size)
 
@@ -104,5 +104,5 @@ base.paste(backside_dias_invertido, (223, 267-altura),backside_dias_invertido)
 base.paste(dias, (coordx, 80-altura),dias)  # ajuste a posição conforme necessário
 base.paste(dias_invertido, (223, 267-altura),dias_invertido) 
 # Salva a imagem resultante
-base.save('/home/victor/Documents/TREZENTOS/images/imagem_final.png')
+base.save(os.path.join(current_directory, 'images', 'imagem_final.png'))
 base.show()

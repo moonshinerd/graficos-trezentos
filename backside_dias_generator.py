@@ -1,6 +1,7 @@
 import plotly.graph_objects as go
 import os
 import gerando_grafico_base as gf
+current_dir = os.path.dirname(os.path.abspath(__file__))
 fig1 = go.Figure(go.Bar(
     x=[30],
     y=['Dias restantes'],
@@ -22,5 +23,5 @@ fig1.update_layout(
 
 if not os.path.exists("images"):
     os.mkdir("images")
-fig1.write_image("/home/victor/Documents/TREZENTOS/images/backside_dias_graf.png")
+fig1.write_image(os.path.join(current_dir, 'images', 'backside_dias_graf.png'))
 #fig1.show()

@@ -3,12 +3,17 @@ import plotly.graph_objects as go
 import os
 from PIL import Image
 # Carregar o DataFrame
-df = pd.read_excel("/home/victor/Documents/TREZENTOS/trezentosteste999.xlsx")
+# Obter o diretório atual onde o script está sendo executado
+current_dir = os.path.dirname(os.path.abspath(__file__))
+# Construir o caminho completo para o arquivo
+file_path = os.path.join(current_dir, 'trezentosteste999.xlsx')
+# Ler o arquivo Excel
+df = pd.read_excel(file_path)
 resol = 1
 linha_grade = 1.1
 media_turma = media_y_data = df.iloc[:, 1].mean()
-dias_totais = 30
-dia_atual = 15
+dias_totais = 100
+dia_atual = 99
 porcent_graf_dias = (dia_atual / dias_totais) * 30
 
 # Extrair os dados para os eixos x e y
@@ -46,7 +51,7 @@ for y in y_data:
       cores.append('#56d19f')
     else:
       cores.append('#62b3ef')  # Cor padrão para outros valores
-fonte_ttf_externa = "/home/victor/Documents/TREZENTOS/Poppins-Regular.ttf"
+fonte_ttf_externa = os.path.join(current_dir, 'Poppins-Regular.ttf')
 # Criar o gráfico de barras
 fig = go.Figure(data=go.Bar(x=x_data, y=y_data, marker=dict(color=cores, cornerradius=30),width=0.65))
 
@@ -127,8 +132,4 @@ for imagem_url, x, y in imagens:
 # Salvar a imagem
 if not os.path.exists("images"):
     os.mkdir("images")
-fig.write_image("/home/victor/Documents/TREZENTOS/images/base_graf.png")
-'''
-base = Image.open("/home/victor/Documents/TREZENTOS/images/base_graf.png")
-base.show()
-'''
+fig.write_image(os.path.join(current_dir, 'images', 'base_graf.png'))
