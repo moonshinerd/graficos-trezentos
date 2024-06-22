@@ -84,15 +84,16 @@ ajusty = 48
 print(gerando_grafico_base.media_turma)
 #if gerando_grafico_base.media_turma 
 # Criando a barra da média da turma
-base.paste(backside_media, (coordx, 290+ajusty),backside_media)  # ajuste a posição conforme necessário
+base.paste(backside_media, (coordx, 290+ajusty+50),backside_media)  # ajuste a posição conforme necessário
 base.paste(backside_media_invertido, (100, 1524-backside_media_invertido.height-180+ajusty),backside_media_invertido)  # ajuste a posição conforme necessário
 
-if 11 < gerando_grafico_base.media_turma <= 13: base.paste(media, (coordx+50, coordy-52+10+ajusty),media)  # ajuste a posição conforme necessário
-elif 10 < gerando_grafico_base.media_turma <= 11: base.paste(media, (coordx+50, coordy-52+20+ajusty),media)  # ajuste a posição conforme necessário
-elif 8< gerando_grafico_base.media_turma <= 10: base.paste(media, (coordx+50, coordy-52+30+ajusty),media)  # ajuste a posição conforme necessário
-elif 6 < gerando_grafico_base.media_turma <= 8: base.paste(media, (coordx, coordy-15+ajusty),media)  # ajuste a posição conforme necessário
-elif gerando_grafico_base.media_turma <= 6: base.paste(media, (coordx, coordy+ajusty),media)  # ajuste a posição conforme necessário
-else: base.paste(media, (coordx+50, coordy-52+ajusty),media)  # ajuste a posição conforme necessário
+if 12 < gerando_grafico_base.media_turma <= 14: base.paste(media, (coordx, coordy-33+ajusty),media)  # ajuste a posição conforme necessário
+elif 10 < gerando_grafico_base.media_turma <= 12: base.paste(media,(coordx, coordy-32+ajusty),media)  # ajuste a posição conforme necessário
+elif 8 < gerando_grafico_base.media_turma <= 10: base.paste(media, (coordx, coordy-18+ajusty),media)  # ajuste a posição conforme necessário
+elif 6 < gerando_grafico_base.media_turma <= 8: base.paste(media, (coordx, coordy-10+ajusty),media)  # ajuste a posição conforme necessário
+elif 4 < gerando_grafico_base.media_turma <= 6: base.paste(media, (coordx, coordy+ajusty),media)  # ajuste a posição conforme necessário
+elif 2 < gerando_grafico_base.media_turma <= 4: base.paste(media, (coordx, coordy+ajusty+20),media)  # ajuste a posição conforme necessário
+else: base.paste(media, (coordx, coordy+ajusty+24),media)  # ajuste a posição conforme necessário
 base.paste(media_invertida, (100, 1524-media_invertida.height-180+ajusty),media_invertida)
 
 #Criando a barra dos dias
