@@ -10,7 +10,8 @@ file_path = os.path.join(current_dir, 'trezentosteste999.xlsx')
 # Ler o arquivo Excel
 df = pd.read_excel(file_path)
 resol = 1
-linha_grade = 1.1
+linha_grade = 1.3
+linha_grade1 = 1.1
 media_turma = media_y_data = df.iloc[:, 1].mean()
 dias_totais = 100
 dia_atual = 99
@@ -40,17 +41,17 @@ for y in y_data:
     elif 2 <= y < 4:
       cores.append('#ef5eeb')
     elif 4 <= y < 6:
-      cores.append('#ef9c8e')
+      cores.append('#78e4ff')
     elif 6 <= y < 8:
-      cores.append('#0ea84c')
+      cores.append('#cf8691')
     elif 8 <= y < 10:
-      cores.append('#f4ea6e')
+      cores.append('#0b9ad4')
     elif 10 <= y < 12:
-      cores.append('#a57449')
+      cores.append('#be88d6')
     elif 12 <= y < 14:
-      cores.append('#56d19f')
+      cores.append('#24329b')
     else:
-      cores.append('#62b3ef')  # Cor padrão para outros valores
+      cores.append('#dc525f')  # Cor padrão para outros valores
 fonte_ttf_externa = os.path.join(current_dir, 'Poppins-Regular.ttf')
 # Criar o gráfico de barras
 fig = go.Figure(data=go.Bar(x=x_data, y=y_data, marker=dict(color=cores, cornerradius=30),width=0.65))
@@ -102,18 +103,35 @@ path_medalha = os.path.join(current_directory, 'demais_assets', 'medalha.png')
 path_imagem_logounb = os.path.join(current_directory, 'demais_assets', 'logo_unb.png')
 path_imagem_logotrezentos = os.path.join(current_directory, 'demais_assets', 'trezentos.png')
 
+imagens = [
+    (path_imagem_4hour, -0.10*linha_grade, 0.225),
+    (path_imagem_6hour, -0.10*linha_grade, 0.35),
+    (path_imagem_8hour, -0.10*linha_grade, 0.48),
+    (path_imagem_10hour, -0.10*linha_grade, 0.62),
+    (path_imagem_12hour, -0.10*linha_grade, 0.75),
+    (path_imagem_14hour, -0.10*linha_grade, 0.9),
+]
+
+for imagem_url, x, y in imagens:
+    fig.add_layout_image(
+        dict(
+            source=imagem_url,
+            x=x,  # Posição x no canto inferior esquerdo do layout
+            y=y,  # Posição y no canto inferior esquerdo do layout
+            xref="paper",
+            yref="paper",
+            sizex=0.09,  # Ajuste conforme necessário
+            sizey=0.09,  # Ajuste conforme necessário
+            xanchor="left",  # Ancoragem à esquerda
+            yanchor="bottom"  # Ancoragem na parte inferior
+        )
+    )
 
 a=0.045
 imagens = [
-    (path_imagem_0hour, -0.12*linha_grade, -0.05),
-    (path_imagem_2hour, -0.11*linha_grade, 0.08),
-    (path_imagem_4hour, -0.11*linha_grade, 0.21),
-    (path_imagem_6hour, -0.115*linha_grade, 0.35),
-    (path_imagem_8hour, -0.1115*linha_grade, 0.48),
-    (path_imagem_10hour, -0.115*linha_grade, 0.62),
-    (path_imagem_12hour, -0.1115*linha_grade, 0.75),
-    (path_imagem_14hour, -0.105*linha_grade, 0.9),
-    (path_medalha, -0.085*linha_grade, 1.025),
+    (path_imagem_0hour, -0.12*linha_grade1, -0.05),
+    (path_imagem_2hour, -0.11*linha_grade1, 0.08),
+    (path_medalha, -0.085*linha_grade1, 1.025),
     (path_imagem_logotrezentos, -0.25, 1.225+a),
     (path_imagem_logounb, 0.999, 1.22+a),
 ]

@@ -117,4 +117,4 @@ base.paste(dias_invertido, (223, 267-altura),dias_invertido)
 base.paste(linha_tracejada, (410,359), linha_tracejada)
 # Salva a imagem resultante
 base.save(os.path.join(current_directory, 'images', 'imagem_final.png'))
-#base.show()
+base.show()
