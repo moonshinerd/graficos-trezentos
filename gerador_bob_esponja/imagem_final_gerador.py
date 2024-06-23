@@ -87,7 +87,7 @@ media = media.crop(media.getbbox())
 media_invertida = ImageOps.flip(media)
 ri.PNG_ResizeKeepTransparency(path_imagem_media,path_redimensionada,new_width=400,new_height=1040, resample=Image.LANCZOS)
 # Salva a imagem redimensionada
-media = Image.open(path_redimensionada)
+media = Image.open(path_redimensionada) #teste
 
 coordx = -75
 coordy = gerando_grafico_base.resol*342
