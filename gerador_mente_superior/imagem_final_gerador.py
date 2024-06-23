@@ -85,7 +85,7 @@ draw.text( pos8 , text8, fill=text_color, font=font4)
 # Corta a imagem para a caixa delimitadora
 media = media.crop(media.getbbox())
 media_invertida = ImageOps.flip(media)
-ri.PNG_ResizeKeepTransparency(path_imagem_media,path_redimensionada,new_width=400,new_height=1040)
+ri.PNG_ResizeKeepTransparency(path_imagem_media,path_redimensionada,new_width=400,new_height=1040, resample=Image.LANCZOS)
 # Salva a imagem redimensionada
 media = Image.open(path_redimensionada)
 

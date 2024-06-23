@@ -85,7 +85,7 @@ draw.text( pos8 , text8, fill=text_color, font=font4)
 # Corta a imagem para a caixa delimitadora
 media = media.crop(media.getbbox())
 media_invertida = ImageOps.flip(media)
-ri.PNG_ResizeKeepTransparency(path_imagem_media,path_redimensionada,new_width=400,new_height=1040)
+ri.PNG_ResizeKeepTransparency(path_imagem_media,path_redimensionada,new_width=400,new_height=1040, resample=Image.LANCZOS)
 # Salva a imagem redimensionada
 media = Image.open(path_redimensionada)
 
@@ -117,4 +117,4 @@ base.paste(dias_invertido, (223, 267-altura),dias_invertido)
 base.paste(linha_tracejada, (410,359), linha_tracejada)
 # Salva a imagem resultante
 base.save(os.path.join(current_directory, 'images', 'imagem_final.png'))
-#base.show()
+base.show()
