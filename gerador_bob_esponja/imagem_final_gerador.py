@@ -34,30 +34,37 @@ draw = ImageDraw.Draw(base)
 font_path = os.path.join(current_directory, "Poppins-Regular.ttf")
 font_path_skema = os.path.join(current_directory, "SkemaProDisplay-Medium.ttf")
 
-font_size = 24
+font_size = 30
 font1 = ImageFont.truetype(font_path, font_size)
 
-font_size = 40
+font_size = 55
 font2 = ImageFont.truetype(font_path, font_size)
 
-font_size = 30
+font_size = 35
 font3 = ImageFont.truetype(font_path, font_size)
 
-font_size = 23
+font_size = 26
 font4 = ImageFont.truetype(font_path_skema, font_size)
 
+font_size = 26
+font5 = ImageFont.truetype(font_path, font_size)
+
 a = 48
+a1 = -10
 text1 = "Média da"
-pos1 = (70, 1350+a)
+pos1 = (a1+70, 1350+a)
 
 text2 = "Turma"
-pos2 = (85, 1375+a)
+pos2 = (a1+85, 1375+a)
+
+b = -160
+c = -20
 
 text3 = "Cálculo 1 com Professor Ricardo Ramos Fragelli"
-pos3 = (300+350, 75)
+pos3 = (b+300+350, 75+c)
 
 text4 = "1 semestre de 2024 - Segunda prova"
-pos4 = (350+400, 125)
+pos4 = (b+350+420, 125+c)
 
 text5 = "Dia  " + str(gerando_grafico_base.dia_atual)
 pos5 = (120, 220)
@@ -77,8 +84,8 @@ draw.text( pos1 , text1, fill=text_color, font=font1)
 draw.text( pos2 , text2, fill=text_color, font=font1)
 draw.text( pos3 , text3, fill=text_color, font=font2)
 draw.text( pos4 , text4, fill=text_color, font=font2)
-draw.text( pos5 , text5, fill=text_color, font=font1)
-draw.text( pos6 , text6, fill=text_color, font=font1)
+draw.text( pos5 , text5, fill=text_color, font=font5)
+draw.text( pos6 , text6, fill=text_color, font=font5)
 draw.text( pos7 , text7, fill=text_color, font=font3)
 draw.text( pos8 , text8, fill=text_color, font=font4)
 

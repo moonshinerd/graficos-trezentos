@@ -1,0 +1,13 @@
+et-xmlfile==1.1.0
+kaleido==0.2.1
+numpy==2.0.0
+openpyxl==3.1.5
+packaging==24.1
+pandas==2.2.2
+pillow==10.4.0
+plotly==5.22.0
+python-dateutil==2.9.0.post0
+pytz==2024.1
+six==1.16.0
+tenacity==8.4.2
+tzdata==2024.1

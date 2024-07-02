@@ -104,12 +104,12 @@ path_imagem_logounb = os.path.join(current_directory, 'demais_assets', 'logo_unb
 path_imagem_logotrezentos = os.path.join(current_directory, 'demais_assets', 'trezentos.png')
 
 imagens = [
-    (path_imagem_4hour, -0.10*linha_grade, 0.225),
-    (path_imagem_6hour, -0.10*linha_grade, 0.35),
-    (path_imagem_8hour, -0.10*linha_grade, 0.48),
-    (path_imagem_10hour, -0.10*linha_grade, 0.62),
-    (path_imagem_12hour, -0.10*linha_grade, 0.75),
-    (path_imagem_14hour, -0.10*linha_grade, 0.9),
+    (path_imagem_4hour, -0.10*linha_grade+0.004, 0.23),
+    (path_imagem_6hour, -0.10*linha_grade+0.005, 0.37),
+    (path_imagem_8hour, -0.10*linha_grade+0.005, 0.5),
+    (path_imagem_10hour, -0.10*linha_grade, 0.64),
+    (path_imagem_12hour, -0.10*linha_grade, 0.78),
+    (path_imagem_14hour, -0.10*linha_grade, 0.92),
 ]
 
 for imagem_url, x, y in imagens:
@@ -129,7 +129,7 @@ for imagem_url, x, y in imagens:
 
 a=0.045
 imagens = [
-    (path_imagem_0hour, -0.12*linha_grade1, -0.05),
+    (path_imagem_0hour, -0.11*linha_grade1, -0.05),
     (path_imagem_2hour, -0.11*linha_grade1, 0.08),
     (path_medalha, -0.085*linha_grade1, 1.025),
     (path_imagem_logotrezentos, -0.25, 1.225+a),
